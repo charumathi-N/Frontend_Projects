@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Day18.css">
+</head>
+<body>
+    <section class="container">
+           <input type="text" class="add-user-name" placeholder="Enter your name"><br><br>
+           <input type="text" class="add-user-company" placeholder="Enter your company name"><br><br>
+           <input type="text" hidden class="add-user-id" />
+           <button onclick="addUser()" class="btn btn-primary">Add User</button>
+           <button class="btn btn-primary" onclick="Updateuser()">Update User</button> 
+    </section>
+    <!-- collected inside below section -->
+    <div class="user-list">
+
+    </div>
+
+
+
+    <script src="Day18.js"></script>
+</body>
+</html>
