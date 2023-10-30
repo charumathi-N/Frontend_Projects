@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APITask</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header class="heading">
+        <div>Comments</div>
+        <br><br>
+        <div>
+            <label>PostID:</label>
+            <input type="text" placeholder="Enter the PostId to edit" class="id" id="PostId"><span class="popup" hidden style="color:red;font-size: 10px;">Please enter PostId*</span><br><br>
+            <label>ID:</label>
+            <input type="text" placeholder="Enter the Id to edit" class="id" id="Id"><span class="popup" hidden style="color:red;font-size: 10px;">Please enter state*</span><br><br>
+            <label>Name:</label>
+            <input type="text" placeholder="Enter Country to edit" class="name" id="Name"><span class="popup" hidden style="color:red;font-size: 10px;">Please edit country*</span><br><br>
+            <label>Email:</label>
+            <input type="text" placeholder="Enter Website to edit" class="email" id="Email"><span class="popup" hidden style="color:red;font-size: 10px;">Please edit Website*</span><br><br>
+            <label>Upload image:</label><span class="popup" hidden>Please upload the image</span>
+            <input type="file" accept="image/png,image/jpg" onchange="Dataupload(event)" class="image" id="Image" style="color:red;font-size: 10px;"><br><br>
+            <button class="submit" onClick="Updateitems()">Submit</button>
+        </div>
+    </header>
+    <section class="main-container">
+
+    </section>
+    <script src="index.js"></script>
+</body>
+
+</html>
