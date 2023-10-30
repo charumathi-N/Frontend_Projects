@@ -58,7 +58,7 @@ async function Updateitems() {
     // const updateUrl = `${url}/${Id}`;
     try {
         const data = await fetch(`${url}/${Id}`, {
-            method: "GET",
+            method: "PUT",
             body: JSON.stringify({
                 PostId: PostId,
                 id: Id,
