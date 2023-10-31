@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="Rating_Form.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Ratinig Form</h1>
+        <div class="form-group row">
+            <!-- firstname -->
+        <div class="col-xs-4">
+          <label for="firstname">Firstname</label><span class="req">*</span>
+          <input class="form-control" id="firstname" type="text" required>
+          <span>First</span>
+        </div>
+        <!-- lastname -->
+        <div class="col-xs-4">
+          <label for="secondname">Lastname</label><span class="req">*</span>
+          <input class="form-control" id="secondname" type="text" required>
+          <span>Last</span>
+        </div>
+        </div>
+        <!-- Email -->
+        <label for="secondname">Email</label><span class="req">*</span>
+        <div class="input-group col-xs-8">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input id="email" type="email" class="form-control" name="email" placeholder="Email" required>
+        </div>
+        <!-- Experience -->
+        <label for="secondname">Your Experience </label><span class="req">*</span>
+    </div>
+    <script src="Rating_Form.js"></script>
+</body>
+</html>

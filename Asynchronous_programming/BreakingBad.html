@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreakingBad</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h1>BreakingBad Task</h1><br><br>
+    <div class="form-group">
+        <label>Type number between 1 to :</label><br><br>
+        <input type="number" id="num" placeholder="Enter the number from 1 to 5" maxlength="20"><br><br>
+        <button class="btn btn-primary" onclick="getQuotes()">Submit</button>
+    </div>
+
+    <div class="quoteList">
+        <marquee behavior="alternate" direction="left" id="quote" loop="" style="background-color: pink; height: 150px;width: 100%; border: solid black 1px"></marquee>
+        <!-- <div id="quote"></div> -->
+    </div>
+    <script src="BreakingBad.js"></script>
+</body>
+
+</html>
