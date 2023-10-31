@@ -1,0 +1,27 @@
+header {
+    background-color: rgb(21, 21, 184);
+    text-align: center;
+    color: white;
+    height: 400px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-container {
+    background-color: aqua;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 5px;
+    padding: 10px;
+}
+
+.container {
+    background-color: red;
+    border-radius: 10px;
+    width: 30%;
+    height: 300px;
+    padding: 10px;
+    margin: 10px;
+    overflow: scroll;
+}
