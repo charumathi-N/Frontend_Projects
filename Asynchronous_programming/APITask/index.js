@@ -1,6 +1,6 @@
-url = "https://jsonplaceholder.typicode.com/comments";
+url = "https://65349b51e1b6f4c59046d2dd.mockapi.io/api/v1/users";
 var image = "";
-//Write the logic to get the data
+//Write the logic to get the data from API and kept in response variable
 async function display() {
     try {
         const data = await fetch(url);
@@ -12,19 +12,6 @@ async function display() {
 }
 display();
 
-//Write the logic to edit the data
-async function EditItem(p_Id, Id, p_Name, p_Email) {
-    //setting the value in fields
-    document.getElementById("PostId").value = p_Id;
-    document.getElementById("Id").value = Id;
-    document.getElementById("Name").value = p_Name;
-    document.getElementById("Email").value = p_Email;
-    //enabling hidden text 
-    let element = document.getElementsByClassName("popup");
-    for (let i = 0; i < element.length; i++) {
-        element[i].removeAttribute('hidden');
-    }
-}
 //write the logic to display data in a DOM
 async function displayitems() {
     let items = await display();
@@ -39,12 +26,27 @@ async function displayitems() {
         <h3 class="test"><span>Body:${item.body}</span></h3>
         <img id='output' class="output">
         <button onClick="EditItem('${item.postId}','${item.id}','${item.name}','${item.email}')">Edit</button>
-        <button onClick="DeleteItem()">Delete</button>
+        <button onClick="DeleteItem('${item.id}')">Delete</button>
         </div>
     `;
     })
 }
 displayitems();
+
+//Write the logic to show the data for editing
+async function EditItem(p_Id, Id, p_Name, p_Email) {
+    //setting the value in fields
+    document.getElementById("PostId").value = p_Id;
+    document.getElementById("Id").value = Id;
+    document.getElementById("Name").value = p_Name;
+    document.getElementById("Email").value = p_Email;
+    //enabling hidden text 
+    let element = document.getElementsByClassName("popup");
+    for (let i = 0; i < element.length; i++) {
+        element[i].removeAttribute('hidden');
+    }
+}
+
 
 //Write a logic to write the update in api
 async function Updateitems() {
@@ -58,7 +60,7 @@ async function Updateitems() {
     // const updateUrl = `${url}/${Id}`;
     try {
         const data = await fetch(`${url}/${Id}`, {
-            method: "GET",
+            method: "PUT",
             body: JSON.stringify({
                 PostId: PostId,
                 id: Id,
@@ -69,25 +71,59 @@ async function Updateitems() {
                 "content-type": "application/json"
             }
         })
-        console.log(data.status);
-        display();
+        displayitems();
+
     } catch (err) {
         console.error(err);
     }
 }
 
 //Write the logic to upload the image data
-async function Dataupload(event) {
+async function Dataupload(evt) {
     //getting value
     try {
-        image = event.target.files[0];
-        console.log(image);
+        var files = evt.target.files;
+
+        var file = files[0];
+    
+        var fileReader = new FileReader();
+    
+    
+        fileReader.onload = function(progressEvent) {
+            var url = fileReader.result;
+    
+            // Something like: data:image/png;base64,iVBORw...Ym57Ad6m6uHj96js
+            console.log(url);
+            //
+            var myImg = document.getElementById("ProfilePic");
+            myImg.src= url;
+        }
+    
+    
+        // Read file asynchronously.
+        fileReader.readAsDataURL(file); // fileReader.result -> UR
     } catch (err) {
         console.log(err);
     }
 
 }
 //Write the logic to delete the data
-async function DeleteItem() {
-
+async function DeleteItem(id) {
+try{
+   const data = fetch(`${url}/${id}`,{
+   method: 'DELETE',
+   headers: {
+    "Content-Type": "application/json"
+   }
+   })
+    displayitems();
+}   
+catch(err){
+   console.log(err);
+} 
 }
+
+
+//Note 2issues are there one is display call
+// another is photo
+
